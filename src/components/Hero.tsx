@@ -20,18 +20,27 @@ const Hero = () => {
       <div className="absolute inset-0 z-40 flex items-center justify-center">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 opacity-0 animate-fade-in" style={{animationDelay: '300ms', animationFillMode: 'forwards'}}>
-            Restore Your Property's Beauty with Spain Power Washing
+            Commercial & Residential Pressure Washing Services
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto opacity-0 animate-fade-in" style={{animationDelay: '600ms', animationFillMode: 'forwards'}}>
-            Professional power washing services for residential and commercial properties across Spain.
+            Restore your property's beauty with Spain's top-rated power washing service
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in" style={{animationDelay: '900ms', animationFillMode: 'forwards'}}>
+          <div className="flex flex-row justify-center gap-4 opacity-0 animate-fade-in" style={{animationDelay: '900ms', animationFillMode: 'forwards'}}>
             <Button 
+              variant="default"
               onClick={scrollToContact} 
               size="lg" 
-              className="bg-white text-spw-blue hover:bg-gray-100 hover:scale-105 transition-all shadow-lg"
+              className="bg-cyan-500 text-white hover:bg-cyan-600 hover:scale-105 transition-all shadow-lg"
             >
-              Get a Free Quote <ArrowRight className="ml-2 h-5 w-5" />
+              Free Estimate <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              size="lg"
+              className="bg-transparent border-white text-white hover:bg-white/20 hover:scale-105 transition-all shadow-lg"
+            >
+              Our Services
             </Button>
           </div>
         </div>

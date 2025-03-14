@@ -6,21 +6,21 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 const slides = [
   {
     id: 1,
-    title: "House Washing",
-    description: "Restore your home's exterior to its original beauty",
-    image: "https://images.unsplash.com/photo-1558449028-b53a39d100fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80",
+    title: "Commercial & Residential",
+    description: "Professional pressure washing for all types of properties",
+    image: "/lovable-uploads/759e5d05-1b3d-4f44-a776-93acafa826d5.png",
   },
   {
     id: 2,
-    title: "Deck & Patio Cleaning",
+    title: "Patio & Driveway Cleaning",
     description: "Revitalize your outdoor living spaces",
-    image: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+    image: "/lovable-uploads/886ca08f-27c1-4896-850f-9a09ba5d8db1.png",
   },
   {
     id: 3,
-    title: "Driveway Cleaning",
-    description: "First impressions matter - start with a spotless driveway",
-    image: "https://images.unsplash.com/photo-1597677154540-bfca1f8d682d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+    title: "Pavement & Walkway Cleaning",
+    description: "First impressions matter - start with a spotless entrance",
+    image: "/lovable-uploads/430f99a8-a2f5-4843-90f7-5b2f03681610.png",
   }
 ];
 
@@ -71,7 +71,7 @@ const HeroSlider = () => {
       ))}
       
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50 z-20"></div>
+      <div className="absolute inset-0 bg-black/60 z-20"></div>
       
       {/* Slide content */}
       <div className="absolute inset-0 flex items-center justify-center z-30">
@@ -108,7 +108,7 @@ const HeroSlider = () => {
           <button
             key={index}
             className={`w-3 h-3 rounded-full transition-all ${
-              currentSlide === index ? 'bg-white w-8' : 'bg-white/50'
+              currentSlide === index ? 'bg-cyan-500 w-8' : 'bg-white/50'
             }`}
             onClick={() => setCurrentSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
@@ -123,7 +123,7 @@ const HeroSlider = () => {
       >
         <div className="relative">
           <div className="absolute inset-0 rounded-full bg-white/30 animate-ping"></div>
-          <div className="relative bg-white text-spw-blue rounded-full p-2 group-hover:scale-110 transition-transform">
+          <div className="relative bg-cyan-500 text-white rounded-full p-2 group-hover:scale-110 transition-transform">
             <Play size={20} fill="currentColor" />
           </div>
         </div>
