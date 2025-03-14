@@ -1,7 +1,6 @@
 
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, X } from 'lucide-react';
-import HeroSlider from './HeroSlider';
 import { useState } from 'react';
 
 const Hero = () => {
@@ -15,38 +14,34 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative pt-24 h-screen min-h-[600px] max-h-[800px] bg-cyan-700 overflow-hidden">
-      {/* Background Slider */}
-      <HeroSlider />
+    <section id="home" className="relative bg-cyan-700 min-h-[600px] flex items-center">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0" 
+        style={{ 
+          backgroundImage: "url('/lovable-uploads/759e5d05-1b3d-4f44-a776-93acafa826d5.png')", 
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
+      </div>
       
-      {/* Content Overlay */}
-      <div className="absolute inset-0 z-40 flex items-center justify-center">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 opacity-0 animate-fade-in" style={{animationDelay: '300ms', animationFillMode: 'forwards'}}>
-            Restore Your Property's Beauty
+      {/* Content */}
+      <div className="container-custom relative z-20 py-24 md:py-32">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 opacity-0 animate-fade-in" style={{animationDelay: '300ms', animationFillMode: 'forwards'}}>
+            Professionals Home Pressure Washing
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto opacity-0 animate-fade-in" style={{animationDelay: '600ms', animationFillMode: 'forwards'}}>
-            Spain's top-rated power washing service for commercial & residential properties
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in" style={{animationDelay: '900ms', animationFillMode: 'forwards'}}>
+          <div className="mt-8 opacity-0 animate-fade-in" style={{animationDelay: '900ms', animationFillMode: 'forwards'}}>
             <Button 
               variant="default"
               onClick={scrollToContact} 
               size="lg" 
-              className="bg-cyan-500 text-white hover:bg-cyan-600 hover:scale-105 transition-all shadow-lg water-effect"
+              className="bg-cyan-500 text-white hover:bg-cyan-600 transition-all shadow-lg"
             >
-              Free Estimate <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => setIsVideoModalOpen(true)}
-              size="lg"
-              className="bg-transparent border-white text-white hover:bg-white/20 hover:scale-105 transition-all shadow-lg flex items-center mt-4 sm:mt-0"
-            >
-              <div className="mr-2 w-8 h-8 rounded-full bg-white flex items-center justify-center animate-pulse-slow">
-                <Play size={16} className="text-cyan-600 ml-0.5" />
-              </div>
-              Watch Video
+              GET A FREE QUOTE
             </Button>
           </div>
         </div>
@@ -73,13 +68,6 @@ const Hero = () => {
           </div>
         </div>
       )}
-      
-      {/* Wavy bottom divider */}
-      <div className="absolute bottom-0 left-0 right-0 z-30">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
-          <path fill="#ffffff" fillOpacity="1" d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,138.7C672,139,768,181,864,197.3C960,213,1056,203,1152,170.7C1248,139,1344,85,1392,58.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-      </div>
     </section>
   );
 };
