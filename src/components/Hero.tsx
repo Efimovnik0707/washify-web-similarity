@@ -1,9 +1,12 @@
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import HeroSlider from './HeroSlider';
+import { useState } from 'react';
 
 const Hero = () => {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -12,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative pt-24 h-screen min-h-[600px] max-h-[800px] bg-spw-blue overflow-hidden">
+    <section id="home" className="relative pt-24 h-screen min-h-[600px] max-h-[800px] bg-cyan-700 overflow-hidden">
       {/* Background Slider */}
       <HeroSlider />
       
@@ -20,31 +23,56 @@ const Hero = () => {
       <div className="absolute inset-0 z-40 flex items-center justify-center">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 opacity-0 animate-fade-in" style={{animationDelay: '300ms', animationFillMode: 'forwards'}}>
-            Commercial & Residential Pressure Washing Services
+            Restore Your Property's Beauty
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto opacity-0 animate-fade-in" style={{animationDelay: '600ms', animationFillMode: 'forwards'}}>
-            Restore your property's beauty with Spain's top-rated power washing service
+            Spain's top-rated power washing service for commercial & residential properties
           </p>
-          <div className="flex flex-row justify-center gap-4 opacity-0 animate-fade-in" style={{animationDelay: '900ms', animationFillMode: 'forwards'}}>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in" style={{animationDelay: '900ms', animationFillMode: 'forwards'}}>
             <Button 
               variant="default"
               onClick={scrollToContact} 
               size="lg" 
-              className="bg-cyan-500 text-white hover:bg-cyan-600 hover:scale-105 transition-all shadow-lg"
+              className="bg-cyan-500 text-white hover:bg-cyan-600 hover:scale-105 transition-all shadow-lg water-effect"
             >
               Free Estimate <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
               variant="outline"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => setIsVideoModalOpen(true)}
               size="lg"
-              className="bg-transparent border-white text-white hover:bg-white/20 hover:scale-105 transition-all shadow-lg"
+              className="bg-transparent border-white text-white hover:bg-white/20 hover:scale-105 transition-all shadow-lg flex items-center mt-4 sm:mt-0"
             >
-              Our Services
+              <div className="mr-2 w-8 h-8 rounded-full bg-white flex items-center justify-center animate-pulse-slow">
+                <Play size={16} className="text-cyan-600 ml-0.5" />
+              </div>
+              Watch Video
             </Button>
           </div>
         </div>
       </div>
+      
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 animate-fade-in" onClick={() => setIsVideoModalOpen(false)}>
+          <div className="relative max-w-4xl w-full mx-4 aspect-video bg-black rounded-lg overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="absolute top-4 right-4 z-10 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors"
+              onClick={() => setIsVideoModalOpen(false)}
+            >
+              <X size={24} />
+            </button>
+            <iframe 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+              className="w-full h-full"
+              title="Power Washing Service Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
       
       {/* Wavy bottom divider */}
       <div className="absolute bottom-0 left-0 right-0 z-30">
