@@ -93,6 +93,10 @@
     @apply bg-background text-foreground;
     font-family: 'Montserrat', sans-serif;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .section-padding {
@@ -117,4 +121,106 @@
 
 .gallery-item img {
   @apply transition-transform duration-500 hover:scale-110;
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+  }
+}
+
+@keyframes water-ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(52, 152, 219, 0);
+  }
+}
+
+/* Animation Utilities */
+.animate-fade-in {
+  animation: fade-in 1s ease forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
+
+.animate-water-ripple {
+  animation: water-ripple 2s infinite;
+}
+
+/* Water droplet effect for buttons */
+.water-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-effect::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.5s ease-out;
+}
+
+.water-effect:hover::after,
+.water-effect:focus::after {
+  transform: scale(2);
+}
+
+/* Floating Call-to-Action */
+.floating-cta {
+  @apply fixed bottom-6 right-6 z-50 shadow-lg rounded-full p-4 bg-spw-blue text-white;
+  animation: float 4s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.floating-cta:hover {
+  @apply bg-spw-darkblue transform scale-110;
 }

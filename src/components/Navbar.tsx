@@ -9,6 +9,11 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
   };
 
   useEffect(() => {
@@ -31,16 +36,25 @@ const Navbar = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
+      document.body.style.overflow = 'auto';
     }
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-sm shadow-md py-2' 
+          : 'bg-transparent py-4'
+      }`}
+    >
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/logo.png" alt="Spain Power Washing Logo" className="h-12 md:h-16" />
+            <div className="h-12 md:h-16 w-12 md:w-16 rounded-full bg-spw-blue flex items-center justify-center text-white font-bold text-xl">
+              SPW
+            </div>
             <div className="ml-3">
               <h1 className="text-lg md:text-xl font-bold text-spw-blue">Spain Power Washing</h1>
               <p className="text-xs md:text-sm text-spw-darkgray">Professional Cleaning Services</p>
@@ -49,42 +63,53 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <button onClick={() => scrollToSection('home')} className="text-gray-800 hover:text-spw-blue font-medium">Home</button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-800 hover:text-spw-blue font-medium">About</button>
-            <button onClick={() => scrollToSection('services')} className="text-gray-800 hover:text-spw-blue font-medium">Services</button>
-            <button onClick={() => scrollToSection('gallery')} className="text-gray-800 hover:text-spw-blue font-medium">Gallery</button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-gray-800 hover:text-spw-blue font-medium">Testimonials</button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-800 hover:text-spw-blue font-medium">Contact</button>
-            <Button className="bg-spw-blue hover:bg-spw-darkblue text-white">
-              <Phone className="mr-2 h-4 w-4" />
-              +34 123 456 789
+            <button onClick={() => scrollToSection('home')} className="text-gray-800 hover:text-spw-blue font-medium transition-colors">Home</button>
+            <button onClick={() => scrollToSection('about')} className="text-gray-800 hover:text-spw-blue font-medium transition-colors">About</button>
+            <button onClick={() => scrollToSection('services')} className="text-gray-800 hover:text-spw-blue font-medium transition-colors">Services</button>
+            <button onClick={() => scrollToSection('gallery')} className="text-gray-800 hover:text-spw-blue font-medium transition-colors">Gallery</button>
+            <button onClick={() => scrollToSection('testimonials')} className="text-gray-800 hover:text-spw-blue font-medium transition-colors">Testimonials</button>
+            <button onClick={() => scrollToSection('contact')} className="text-gray-800 hover:text-spw-blue font-medium transition-colors">Contact</button>
+            <Button 
+              className="bg-gradient-to-r from-spw-blue to-spw-lightblue hover:shadow-lg hover:scale-105 transition-all text-white"
+              onClick={() => scrollToSection('contact')}
+            >
+              Get a Quote
             </Button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2" onClick={toggleMenu}>
+          <button 
+            className="md:hidden p-2 z-50 relative" 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
-          <div className="py-4 container-custom flex flex-col space-y-4">
-            <button onClick={() => scrollToSection('home')} className="text-left px-4 py-2 text-gray-800 hover:bg-gray-100 rounded">Home</button>
-            <button onClick={() => scrollToSection('about')} className="text-left px-4 py-2 text-gray-800 hover:bg-gray-100 rounded">About</button>
-            <button onClick={() => scrollToSection('services')} className="text-left px-4 py-2 text-gray-800 hover:bg-gray-100 rounded">Services</button>
-            <button onClick={() => scrollToSection('gallery')} className="text-left px-4 py-2 text-gray-800 hover:bg-gray-100 rounded">Gallery</button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-left px-4 py-2 text-gray-800 hover:bg-gray-100 rounded">Testimonials</button>
-            <button onClick={() => scrollToSection('contact')} className="text-left px-4 py-2 text-gray-800 hover:bg-gray-100 rounded">Contact</button>
-            <Button className="bg-spw-blue hover:bg-spw-darkblue text-white">
-              <Phone className="mr-2 h-4 w-4" />
-              +34 123 456 789
-            </Button>
-          </div>
-        </div>
-      )}
+      {/* Mobile Navigation Overlay */}
+      <div 
+        className={`fixed inset-0 bg-white/95 backdrop-blur-md flex flex-col justify-center items-center transition-all duration-300 z-40 ${
+          isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+      >
+        <nav className="flex flex-col space-y-6 text-center">
+          <button onClick={() => scrollToSection('home')} className="text-xl font-medium text-gray-800 hover:text-spw-blue transition-colors">Home</button>
+          <button onClick={() => scrollToSection('about')} className="text-xl font-medium text-gray-800 hover:text-spw-blue transition-colors">About</button>
+          <button onClick={() => scrollToSection('services')} className="text-xl font-medium text-gray-800 hover:text-spw-blue transition-colors">Services</button>
+          <button onClick={() => scrollToSection('gallery')} className="text-xl font-medium text-gray-800 hover:text-spw-blue transition-colors">Gallery</button>
+          <button onClick={() => scrollToSection('testimonials')} className="text-xl font-medium text-gray-800 hover:text-spw-blue transition-colors">Testimonials</button>
+          <button onClick={() => scrollToSection('contact')} className="text-xl font-medium text-gray-800 hover:text-spw-blue transition-colors">Contact</button>
+          <Button 
+            size="lg"
+            className="mt-6 bg-gradient-to-r from-spw-blue to-spw-lightblue hover:shadow-lg hover:scale-105 transition-all text-white"
+            onClick={() => scrollToSection('contact')}
+          >
+            Get a Quote
+          </Button>
+        </nav>
+      </div>
     </header>
   );
 };
