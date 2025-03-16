@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Spray, Water, Home, Fence, Building, Umbrella } from 'lucide-react';
+import { ArrowRight, Droplets, WashingMachine, Home, Fence, Building, Umbrella } from 'lucide-react';
 
 const Services = () => {
   const scrollToContact = () => {
@@ -26,7 +26,7 @@ const Services = () => {
           <Card className="service-card overflow-hidden h-full">
             <CardContent className="p-6 flex flex-col items-center text-center h-full">
               <div className="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center mb-4">
-                <Spray size={32} className="text-cyan-600" />
+                <WashingMachine size={32} className="text-cyan-600" />
               </div>
               <h3 className="text-xl font-bold mb-2">Patio & Driveway Cleaning</h3>
               <p className="text-gray-600 mb-auto">
@@ -39,7 +39,7 @@ const Services = () => {
           <Card className="service-card overflow-hidden h-full">
             <CardContent className="p-6 flex flex-col items-center text-center h-full">
               <div className="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center mb-4">
-                <Water size={32} className="text-cyan-600" />
+                <Droplets size={32} className="text-cyan-600" />
               </div>
               <h3 className="text-xl font-bold mb-2">Pool Area Cleaning</h3>
               <p className="text-gray-600 mb-auto">
