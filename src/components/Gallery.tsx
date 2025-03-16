@@ -7,26 +7,26 @@ const galleryItems = [
   {
     id: 1,
     title: 'Patio Cleaning',
-    before: '/lovable-uploads/f35f01cd-f7f7-4717-9512-524a1c25620b.png',
-    after: '/lovable-uploads/17dd093f-9dff-4725-af90-ca9affc33e7a.png',
+    before: '/lovable-uploads/8f433888-9490-490e-b284-7147dd044ff2.png',
+    after: '/lovable-uploads/1fff76b7-6e1c-469f-b3af-272c9dba32d4.png',
   },
   {
     id: 2,
     title: 'Driveway Cleaning',
-    before: '/lovable-uploads/035a6663-10e2-415a-8847-47060c17039f.png',
-    after: '/lovable-uploads/9fde2587-5483-4672-ae61-423510642f8f.png',
+    before: '/lovable-uploads/51ec2f0b-cebc-45dd-81a0-c657efd70586.png',
+    after: '/lovable-uploads/4a3b0dfc-979d-47fc-a830-c70c2a08301a.png',
   },
   {
     id: 3,
     title: 'Pavement Cleaning',
-    before: '/lovable-uploads/f4adf068-cf16-4f91-a5da-0575c1d603da.png',
-    after: '/lovable-uploads/f79c0fe3-35e9-41fc-8f7c-c6378380d71b.png',
+    before: '/lovable-uploads/05bed081-6d19-45f6-9a3c-522203784173.png',
+    after: '/lovable-uploads/4ab7326a-ed28-4c22-9daa-02947deb7774.png',
   },
   {
     id: 4,
     title: 'Walkway Restoration',
-    before: '/lovable-uploads/47ade89b-3577-45aa-9569-f2f4d81ad127.png',
-    after: '/lovable-uploads/47202e2a-9670-4470-b65e-86728e182d4b.png',
+    before: '/lovable-uploads/9c24e25f-1d04-4adb-ba3b-1173ced38a7e.png',
+    after: '/lovable-uploads/a6ae4a02-6a7c-44ef-9b2d-d44ce5ec24cb.png',
   },
 ];
 
