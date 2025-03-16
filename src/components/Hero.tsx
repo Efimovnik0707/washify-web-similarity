@@ -34,6 +34,12 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 opacity-0 animate-fade-in" style={{animationDelay: '300ms', animationFillMode: 'forwards'}}>
             Professionals Home Pressure Washing
           </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold text-cyan-300 mb-4 opacity-0 animate-fade-in" style={{animationDelay: '500ms', animationFillMode: 'forwards'}}>
+            Top Rated Exterior Cleaning in Costa Blanca
+          </h2>
+          <p className="text-white/90 mb-8 opacity-0 animate-fade-in" style={{animationDelay: '700ms', animationFillMode: 'forwards'}}>
+            At Spain Power Washing, we specialize in restoring the beauty of your home. Our expert team uses top-quality equipment and eco-friendly products to remove dirt, mold, and grime from any surface. Whether it's your driveway, walls, or roof, we ensure a spotless finish, making your property look fresh and well-maintained — all starting at just €2.5 per square meter.
+          </p>
           <div className="mt-8 opacity-0 animate-fade-in" style={{animationDelay: '900ms', animationFillMode: 'forwards'}}>
             <Button 
               variant="default"
