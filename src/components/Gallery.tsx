@@ -6,27 +6,27 @@ import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 const galleryItems = [
   {
     id: 1,
-    title: 'Patio Cleaning',
-    before: '/lovable-uploads/8f433888-9490-490e-b284-7147dd044ff2.png',
-    after: '/lovable-uploads/1fff76b7-6e1c-469f-b3af-272c9dba32d4.png',
+    title: 'Patio with Table Cleaning',
+    before: '/lovable-uploads/e4f8f7fe-1039-44b7-8e17-fbe359c06c14.png',
+    after: '/lovable-uploads/074270a9-ef23-4453-9497-cbcaf78ce805.png',
   },
   {
     id: 2,
-    title: 'Driveway Cleaning',
-    before: '/lovable-uploads/51ec2f0b-cebc-45dd-81a0-c657efd70586.png',
-    after: '/lovable-uploads/4a3b0dfc-979d-47fc-a830-c70c2a08301a.png',
+    title: 'Corridor Tile Cleaning',
+    before: '/lovable-uploads/f8daa4e6-1654-44e7-af45-b82b1064572e.png',
+    after: '/lovable-uploads/07d62bf3-ea9a-4f05-96f2-e1077c57c1c9.png',
   },
   {
     id: 3,
-    title: 'Pavement Cleaning',
-    before: '/lovable-uploads/05bed081-6d19-45f6-9a3c-522203784173.png',
-    after: '/lovable-uploads/4ab7326a-ed28-4c22-9daa-02947deb7774.png',
+    title: 'Outdoor Kitchen Area',
+    before: '/lovable-uploads/90362d76-2d07-402b-92b1-04615111f6a9.png',
+    after: '/lovable-uploads/69b3fee2-ebaf-4404-a991-615e5d850d5c.png',
   },
   {
     id: 4,
-    title: 'Walkway Restoration',
-    before: '/lovable-uploads/9c24e25f-1d04-4adb-ba3b-1173ced38a7e.png',
-    after: '/lovable-uploads/a6ae4a02-6a7c-44ef-9b2d-d44ce5ec24cb.png',
+    title: 'Terrace with Plants',
+    before: '/lovable-uploads/57c743cc-d1bb-44e1-8ecb-b7101853fbdb.png',
+    after: '/lovable-uploads/12a872eb-a93d-420a-8e5a-78619ef59a4c.png',
   },
 ];
 
