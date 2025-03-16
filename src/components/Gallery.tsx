@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 
 // Before/after gallery items with the uploaded images
 const galleryItems = [
@@ -75,7 +75,7 @@ const Gallery = () => {
           <DialogContent className="max-w-4xl">
             {selectedItem && (
               <div className="p-4">
-                <h3 className="text-2xl font-bold mb-6 text-center">{selectedItem.title}</h3>
+                <DialogTitle className="text-2xl font-bold mb-6 text-center">{selectedItem.title}</DialogTitle>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <div className="bg-black/70 text-white text-sm py-1 px-3 inline-block">Before</div>
