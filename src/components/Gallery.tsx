@@ -7,8 +7,8 @@ const galleryItems = [
   {
     id: 1,
     title: 'Patio with Table Cleaning',
-    before: '/src/images/Gallery/B_1.JPEG',
-    after: '/src/images/Gallery/A_1.JPEG',
+    before: '/lovable-uploads/B_1.JPEG',
+    after: '/lovable-uploads/A_1.JPEG',
   },
   {
     id: 2,
