@@ -23,7 +23,7 @@ const Hero = () => {
       
       {/* Content */}
       <div className="container-custom relative z-20 py-24 md:py-32">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl px-0 py-[42px] ">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 opacity-0 animate-fade-in" style={{
           animationDelay: '300ms',
           animationFillMode: 'forwards'
