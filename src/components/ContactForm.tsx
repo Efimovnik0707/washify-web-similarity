@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -6,36 +5,38 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/components/ui/use-toast';
 import { ArrowUpRight, Phone, Mail, MapPin, Clock } from 'lucide-react';
-
 const ContactForm = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     service: '',
-    message: '',
+    message: ''
   });
   const [isLoading, setIsLoading] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
       ...prev,
-      [name]: value,
+      [name]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Simulate form submission delay
     setTimeout(() => {
       setIsLoading(false);
       toast({
         title: "Message Sent!",
-        description: "We've received your message and will get back to you soon.",
+        description: "We've received your message and will get back to you soon."
       });
       // Reset form
       setFormData({
@@ -43,13 +44,11 @@ const ContactForm = () => {
         email: '',
         phone: '',
         service: '',
-        message: '',
+        message: ''
       });
     }, 1000);
   };
-
-  return (
-    <section id="contact" className="section-padding bg-spw-gray">
+  return <section id="contact" className="section-padding bg-spw-gray">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
@@ -58,64 +57,35 @@ const ContactForm = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-2 gap-8 px-[127px] py-[8px] my-0 mx-0">
           {/* Contact Form */}
-          <Card className="shadow-lg overflow-hidden">
+          <Card className="shadow-lg overflow-hidden px-[6px] py-[34px] my-[61px]">
             <CardContent className="p-0">
-              <div className="bg-spw-blue p-6">
+              <div className="p-6 rounded bg-cyan-700 px-[13px] mx-[35px]">
                 <h3 className="text-2xl font-bold text-white mb-2">Get a Free Quote</h3>
                 <p className="text-white/90">Fill out the form below and we'll get back to you as soon as possible.</p>
               </div>
-              <div className="p-6">
+              <div className="p-6 px-[37px] py-[31px]">
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-1">Your Name</label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="John Smith"
-                      required
-                    />
+                    <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="John Smith" required />
                   </div>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium mb-1">Email Address</label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="your@email.com"
-                        required
-                      />
+                      <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone Number</label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+34 123 456 789"
-                        required
-                      />
+                      <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+34 123 456 789" required />
                     </div>
                   </div>
                   
                   <div>
                     <label htmlFor="service" className="block text-sm font-medium mb-1">Service Needed</label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      required
-                    >
+                    <select id="service" name="service" value={formData.service} onChange={handleChange} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required>
                       <option value="" disabled>Select a service</option>
                       <option value="Patio & Driveway Cleaning">Patio & Driveway Cleaning</option>
                       <option value="Pool Area Cleaning">Pool Area Cleaning</option>
@@ -129,18 +99,10 @@ const ContactForm = () => {
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-1">Your Message</label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell us about your needs..."
-                      rows={4}
-                      required
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your needs..." rows={4} required />
                   </div>
                   
-                  <Button type="submit" className="w-full bg-spw-blue hover:bg-spw-darkblue" disabled={isLoading}>
+                  <Button type="submit" disabled={isLoading} className="w-full bg-cyan-800 hover:bg-cyan-700">
                     {isLoading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
@@ -149,10 +111,10 @@ const ContactForm = () => {
           </Card>
           
           {/* Contact Information */}
-          <div className="space-y-6">
+          <div className="space-y-6 py-[37px] px-[4px] my-[22px]">
             <Card className="shadow-md">
-              <CardContent className="p-6">
-                <div className="flex items-start">
+              <CardContent className="p-6 px-[21px] my-0 py-[13px] mx-0">
+                <div className="flex items-start py-0">
                   <div className="h-10 w-10 rounded-full bg-spw-blue/10 flex items-center justify-center text-spw-blue mr-4 flex-shrink-0">
                     <Phone className="h-5 w-5" />
                   </div>
@@ -168,7 +130,7 @@ const ContactForm = () => {
             </Card>
             
             <Card className="shadow-md">
-              <CardContent className="p-6">
+              <CardContent className="p-6 py-[16px]">
                 <div className="flex items-start">
                   <div className="h-10 w-10 rounded-full bg-spw-blue/10 flex items-center justify-center text-spw-blue mr-4 flex-shrink-0">
                     <Mail className="h-5 w-5" />
@@ -185,7 +147,7 @@ const ContactForm = () => {
             </Card>
             
             <Card className="shadow-md">
-              <CardContent className="p-6">
+              <CardContent className="p-6 py-[13px]">
                 <div className="flex items-start">
                   <div className="h-10 w-10 rounded-full bg-spw-blue/10 flex items-center justify-center text-spw-blue mr-4 flex-shrink-0">
                     <MapPin className="h-5 w-5" />
@@ -205,7 +167,7 @@ const ContactForm = () => {
             </Card>
             
             <Card className="shadow-md">
-              <CardContent className="p-6">
+              <CardContent className="p-6 py-[18px]">
                 <div className="flex items-start">
                   <div className="h-10 w-10 rounded-full bg-spw-blue/10 flex items-center justify-center text-spw-blue mr-4 flex-shrink-0">
                     <Clock className="h-5 w-5" />
@@ -233,8 +195,6 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactForm;
