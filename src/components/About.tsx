@@ -2,7 +2,7 @@ import { CheckCircle2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 const About = () => {
-  return <section id="about" className="section-padding bg-white">
+  return <section id="about" className="section-padding my-[89px] py-[30px] bg-zinc-50">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Spain Power Washing</h2>
