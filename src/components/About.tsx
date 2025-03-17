@@ -60,7 +60,7 @@ const About = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-18 px-[149px] mx-0 my-[63px]">
           <Card className="bg-white shadow-md hover:shadow-lg transition-shadow">
             <CardContent className="pt-6">
               <div className="text-center">
