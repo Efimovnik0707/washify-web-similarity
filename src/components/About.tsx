@@ -16,7 +16,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <img 
-              src="/lovable-uploads/610e4b59-1419-42b0-b132-d8d5aab54acb.png" 
+              src="/lovable-uploads/About_1.jpg" 
               alt="Power washing service" 
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
