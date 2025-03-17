@@ -1,6 +1,7 @@
 
 import { CheckCircle2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const About = () => {
   return (
@@ -13,13 +14,15 @@ const About = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            <img 
-              src="/lovable-uploads/About_1.jpg" 
-              alt="Power washing service" 
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
-            />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          <div className="h-full flex items-center">
+            <div className="rounded-lg shadow-lg overflow-hidden h-full w-full">
+              <img 
+                src="/lovable-uploads/About_1.jpg" 
+                alt="Power washing service" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           
           <div>
