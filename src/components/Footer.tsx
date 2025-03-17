@@ -1,25 +1,23 @@
-
 import { Button } from '@/components/ui/button';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
-
 const Footer = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
+  return <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 py-[4px] px-0 mx-0 my-0">
           {/* Company Info */}
-          <div>
+          <div className="mx-0">
             <div className="flex items-center mb-4">
               <img src="/logo.png" alt="Spain Power Washing Logo" className="h-10 mr-3" />
               <div>
-                <h3 className="font-bold text-xl">Spain Power Washing</h3>
+                <h3 className="font-bold text-base">Spain Power Washing</h3>
               </div>
             </div>
             <p className="text-gray-400 mb-4">
@@ -39,7 +37,7 @@ const Footer = () => {
           </div>
           
           {/* Quick Links */}
-          <div>
+          <div className="my-0 mx-[47px] px-[14px]">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
@@ -64,7 +62,7 @@ const Footer = () => {
           </div>
           
           {/* Services */}
-          <div>
+          <div className="mx-[22px]">
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
@@ -89,7 +87,7 @@ const Footer = () => {
           </div>
           
           {/* Contact */}
-          <div>
+          <div className="my-0 mx-[13px]">
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">
@@ -106,10 +104,7 @@ const Footer = () => {
                 <span>Sat: 9am - 5pm</span>
               </li>
             </ul>
-            <Button 
-              className="mt-4 bg-spw-blue hover:bg-spw-darkblue"
-              onClick={() => scrollToSection('contact')}
-            >
+            <Button className="mt-4 bg-spw-blue hover:bg-spw-darkblue" onClick={() => scrollToSection('contact')}>
               Get a Free Quote
             </Button>
           </div>
@@ -128,8 +123,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
