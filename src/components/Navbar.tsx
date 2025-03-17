@@ -169,8 +169,9 @@ const Navbar = () => {
       {/* Mobile Navigation Overlay */}
       <div 
         className={`fixed inset-0 bg-white/98 backdrop-blur-md flex flex-col justify-center items-center transition-all duration-300 z-40 ${
-          isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
+        style={{ height: '100dvh', top: 0 }}
       >
         <nav className="flex flex-col space-y-6 text-center">
           <button onClick={() => scrollToSection('home')} className="text-xl font-medium text-gray-800 hover:text-cyan-600 transition-colors">Home</button>
