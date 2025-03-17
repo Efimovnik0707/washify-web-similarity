@@ -62,8 +62,8 @@ const ContactForm = () => {
           <Card className="shadow-lg overflow-hidden px-[6px] py-[34px] my-[61px]">
             <CardContent className="p-0">
               <div className="p-6 rounded bg-cyan-700 px-[13px] mx-[35px]">
-                <h3 className="text-2xl font-bold text-white mb-2">Get a Free Quote</h3>
-                <p className="text-white/90">Fill out the form below and we'll get back to you as soon as possible.</p>
+                <h3 className="text-2xl font-bold text-white mb-2 my-0 py-0 mx-[17px]">Get a Free Quote</h3>
+                <p className="text-white/90 mx-[18px]">Fill out the form below and we'll get back to you as soon as possible.</p>
               </div>
               <div className="p-6 px-[37px] py-[31px]">
                 <form onSubmit={handleSubmit} className="space-y-4">
