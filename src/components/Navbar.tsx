@@ -1,20 +1,11 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, Menu, X } from 'lucide-react';
-import { 
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  navigationMenuTriggerStyle
-} from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from '@/lib/utils';
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     if (!isMenuOpen) {
@@ -23,7 +14,6 @@ const Navbar = () => {
       document.body.style.overflow = 'auto';
     }
   };
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -32,30 +22,22 @@ const Navbar = () => {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
       setIsMenuOpen(false);
       document.body.style.overflow = 'auto';
     }
   };
-
-  return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-sm shadow-md py-2' 
-          : 'bg-transparent py-4'
-      }`}
-    >
+  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -73,68 +55,32 @@ const Navbar = () => {
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="gap-1">
               <NavigationMenuItem>
-                <NavigationMenuLink 
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    "bg-transparent hover:bg-cyan-50 text-gray-700"
-                  )}
-                  onClick={() => scrollToSection('home')}
-                >
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-cyan-50 text-gray-700")} onClick={() => scrollToSection('home')}>
                   Home
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink 
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    "bg-transparent hover:bg-cyan-50 text-gray-700"
-                  )}
-                  onClick={() => scrollToSection('services')}
-                >
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-cyan-50 text-gray-700")} onClick={() => scrollToSection('services')}>
                   Services
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink 
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    "bg-transparent hover:bg-cyan-50 text-gray-700"
-                  )}
-                  onClick={() => scrollToSection('gallery')}
-                >
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-cyan-50 text-gray-700")} onClick={() => scrollToSection('gallery')}>
                   Gallery
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink 
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    "bg-transparent hover:bg-cyan-50 text-gray-700"
-                  )}
-                  onClick={() => scrollToSection('about')}
-                >
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-cyan-50 text-gray-700")} onClick={() => scrollToSection('about')}>
                   About
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink 
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    "bg-transparent hover:bg-cyan-50 text-gray-700"
-                  )}
-                  onClick={() => scrollToSection('testimonials')}
-                >
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-cyan-50 text-gray-700")} onClick={() => scrollToSection('testimonials')}>
                   Testimonials
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink 
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    "bg-transparent hover:bg-cyan-50 text-gray-700"
-                  )}
-                  onClick={() => scrollToSection('contact')}
-                >
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-cyan-50 text-gray-700")} onClick={() => scrollToSection('contact')}>
                   Contact
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -147,31 +93,20 @@ const Navbar = () => {
               <Phone size={18} className="mr-2" />
               <span className="font-medium">+34 123 456 789</span>
             </a>
-            <Button 
-              className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:shadow-lg hover:scale-105 transition-all text-white"
-              onClick={() => scrollToSection('contact')}
-            >
+            <Button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:shadow-lg hover:scale-105 transition-all text-white font-semibold text-lg bg-slate-700 hover:bg-slate-600">
               Get a Free Quote
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2 z-50 relative" 
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
+          <button className="md:hidden p-2 z-50 relative" onClick={toggleMenu} aria-label="Toggle menu">
             {isMenuOpen ? <X size={24} className="text-gray-800" /> : <Menu size={24} className={`${isScrolled ? 'text-gray-800' : 'text-white'}`} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation Overlay */}
-      <div 
-        className={`fixed inset-0 bg-white/98 backdrop-blur-md flex flex-col justify-center items-center transition-all duration-300 z-40 ${
-          isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
-      >
+      <div className={`fixed inset-0 bg-white/98 backdrop-blur-md flex flex-col justify-center items-center transition-all duration-300 z-40 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
         <nav className="flex flex-col space-y-6 text-center">
           <button onClick={() => scrollToSection('home')} className="text-xl font-medium text-gray-800 hover:text-cyan-600 transition-colors">Home</button>
           <button onClick={() => scrollToSection('services')} className="text-xl font-medium text-gray-800 hover:text-cyan-600 transition-colors">Services</button>
@@ -185,18 +120,12 @@ const Navbar = () => {
               <Phone size={18} className="mr-2" />
               <span className="font-medium">+34 123 456 789</span>
             </a>
-            <Button 
-              size="lg"
-              className="mt-4 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:shadow-lg hover:scale-105 transition-all text-white"
-              onClick={() => scrollToSection('contact')}
-            >
+            <Button size="lg" className="mt-4 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:shadow-lg hover:scale-105 transition-all text-white" onClick={() => scrollToSection('contact')}>
               Get a Free Quote
             </Button>
           </div>
         </nav>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Navbar;
