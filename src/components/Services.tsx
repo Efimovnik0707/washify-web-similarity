@@ -100,9 +100,7 @@ const Services = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600" onClick={scrollToContact}>
-            Get a Free Estimate
-          </Button>
+          <Button size="lg" onClick={scrollToContact} className="bg-cyan-400 hover:bg-cyan-700 font-semibold">Get a Free Quote</Button>
         </div>
       </div>
     </section>;
