@@ -13,20 +13,14 @@ const galleryItems = [
   {
     id: 2,
     title: 'Corridor Tile Cleaning',
-    before: '/lovable-uploads/f8daa4e6-1654-44e7-af45-b82b1064572e.png',
-    after: '/lovable-uploads/07d62bf3-ea9a-4f05-96f2-e1077c57c1c9.png',
+    before: '/lovable-uploads/B_2.JPEG',
+    after: '/lovable-uploads/A_2.JPEG',
   },
   {
     id: 3,
     title: 'Outdoor Kitchen Area',
-    before: '/lovable-uploads/90362d76-2d07-402b-92b1-04615111f6a9.png',
-    after: '/lovable-uploads/69b3fee2-ebaf-4404-a991-615e5d850d5c.png',
-  },
-  {
-    id: 4,
-    title: 'Terrace with Plants',
-    before: '/lovable-uploads/57c743cc-d1bb-44e1-8ecb-b7101853fbdb.png',
-    after: '/lovable-uploads/12a872eb-a93d-420a-8e5a-78619ef59a4c.png',
+    before: '/lovable-uploads/B_4.JPEG',
+    after: '/lovable-uploads/A_4.JPEG',
   },
 ];
 
